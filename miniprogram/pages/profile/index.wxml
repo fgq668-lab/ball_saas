@@ -1,0 +1,10 @@
+<view class="section">
+  <view class="card profile-card">
+    <view class="title">我的</view>
+    <view class="row"><text>测试用户</text><text>{{userId}}</text></view>
+    <view class="row"><text>环境</text><text>{{env}}</text></view>
+    <view class="row"><text>登录态</text><text>{{hasToken ? '已登录' : '未登录'}}</text></view>
+    <view class="api">{{apiBaseUrl}}</view>
+    <view class="message">{{message}}</view>
+  </view>
+</view>

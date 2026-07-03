@@ -1,0 +1,14 @@
+.section { padding: 24rpx; }
+.card, .detail, .payments { background: #ffffff; border-radius: 12rpx; padding: 28rpx; margin-bottom: 18rpx; box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.05); }
+.title { font-size: 34rpx; font-weight: 700; margin-bottom: 18rpx; color: #111827; }
+.subtitle { font-weight: 700; margin-bottom: 16rpx; color: #111827; }
+.line { color: #374151; margin-top: 12rpx; font-size: 27rpx; }
+.actions { display: flex; gap: 12rpx; margin-top: 24rpx; }
+.actions button { flex: 1; font-size: 24rpx; padding: 0; }
+.primary { background: #16a085; color: #ffffff; border-radius: 10rpx; }
+.secondary { background: #eef2f7; color: #111827; border-radius: 10rpx; }
+.danger { background: #fee2e2; color: #991b1b; border-radius: 10rpx; }
+.payment-row { display: flex; justify-content: space-between; align-items: center; gap: 18rpx; padding: 16rpx 0; border-top: 1rpx solid #e5e7eb; color: #374151; }
+.right { text-align: right; }
+.muted { color: #6b7280; }
+.small { font-size: 24rpx; margin-top: 6rpx; }

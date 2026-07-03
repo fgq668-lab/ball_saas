@@ -1,0 +1,20 @@
+<view class="section">
+  <view wx:if="{{error}}" class="card muted">{{error}}</view>
+
+  <view wx:if="{{venue}}" class="venue-head">
+    <view class="venue-name">{{venue.name}}</view>
+    <view class="venue-meta">{{venue.address}}</view>
+    <view class="venue-meta">{{venue.sportTypes}}</view>
+  </view>
+
+  <view class="section-title">可预约场地</view>
+  <view wx:for="{{courts}}" wx:key="id" class="court-card">
+    <view>
+      <view class="court-name">{{item.name}}</view>
+      <view class="court-meta">{{item.sportType}} · {{item.status}}</view>
+    </view>
+    <button class="book-btn" data-court="{{item}}" bindtap="openBooking">预约</button>
+  </view>
+
+  <view wx:if="{{!error && courts.length === 0}}" class="card muted">暂无可预约场地</view>
+</view>

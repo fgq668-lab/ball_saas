@@ -1,0 +1,32 @@
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  color: #374151;
+  font-size: 28rpx;
+}
+
+.api {
+  padding: 18rpx;
+  border-radius: 8rpx;
+  background: #f3f4f6;
+  color: #4b5563;
+  font-size: 24rpx;
+  word-break: break-all;
+}
+
+.message {
+  color: #16a085;
+  font-size: 26rpx;
+}

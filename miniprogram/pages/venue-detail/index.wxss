@@ -1,0 +1,64 @@
+.venue-head {
+  background: #ffffff;
+  border: 1rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  padding: 28rpx;
+  margin-bottom: 24rpx;
+}
+
+.venue-name {
+  font-size: 38rpx;
+  font-weight: 700;
+  color: #111827;
+}
+
+.venue-meta {
+  margin-top: 12rpx;
+  color: #6b7280;
+  font-size: 26rpx;
+}
+
+.section-title {
+  margin: 24rpx 0 16rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.court-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  margin-bottom: 18rpx;
+}
+
+.court-name {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #111827;
+}
+
+.court-meta {
+  margin-top: 8rpx;
+  color: #6b7280;
+  font-size: 24rpx;
+}
+
+.book-btn {
+  width: 150rpx;
+  margin: 0;
+  padding: 0;
+  line-height: 68rpx;
+  border-radius: 8rpx;
+  background: #16a085;
+  color: #ffffff;
+  font-size: 26rpx;
+}
+
+.muted {
+  color: #6b7280;
+}

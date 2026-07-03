@@ -1,0 +1,62 @@
+<view class="section">
+  <view wx:if="{{error}}" class="card muted">{{error}}</view>
+  <view wx:if="{{match}}" class="card detail">
+    <view class="title">{{match.matchNo}}</view>
+    <view class="line">状态：{{match.status}}</view>
+    <view class="line">场馆：{{match.venueId}} · 场地：{{match.courtId}}</view>
+    <view class="line">人数：{{match.currentPlayers}}/{{match.maxPlayers}} · 最低 {{match.minPlayers}}</view>
+    <view class="line">AA 金额：{{match.aaText}}</view>
+    <view class="line">时间：{{match.timeText}}</view>
+    <view class="actions">
+      <button class="primary" loading="{{busy}}" bindtap="joinMatch">加入约战</button>
+      <button class="secondary" loading="{{busy}}" bindtap="leaveMatch">退出约战</button>
+      <button class="danger" loading="{{busy}}" bindtap="cancelNotFormed">取消未成局</button>
+    </view>
+  </view>
+
+  <view wx:if="{{match}}" class="card payments">
+    <view class="subtitle">我的 AA 支付</view>
+    <view wx:if="{{mySharePayment}}" class="payment-row">
+      <text>{{mySharePayment.amountText}}</text>
+      <text>{{mySharePayment.status}}</text>
+    </view>
+    <button wx:if="{{!mySharePayment}}" class="primary" loading="{{busy}}" bindtap="createSharePayment">创建 AA 支付单</button>
+    <button wx:if="{{mySharePayment && mySharePayment.status === 'PENDING'}}" class="primary" loading="{{busy}}" bindtap="payShare">模拟支付 AA</button>
+  </view>
+
+  <view wx:if="{{players.length > 0}}" class="card payments">
+    <view class="subtitle">成员</view>
+    <view wx:for="{{players}}" wx:key="id" class="payment-row">
+      <view>
+        <view>用户 {{item.userId}}</view>
+        <view class="muted small">{{item.joinedText}}</view>
+      </view>
+      <text>{{item.status}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{sharePayments.length > 0}}" class="card payments">
+    <view class="subtitle">AA 支付状态</view>
+    <view wx:for="{{sharePayments}}" wx:key="id" class="payment-row">
+      <view>
+        <view>用户 {{item.userId}}</view>
+        <view class="muted small">{{item.paymentNo}}</view>
+      </view>
+      <view class="right">
+        <view>{{item.amountText}}</view>
+        <view>{{item.status}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{shareRefunds.length > 0}}" class="card payments">
+    <view class="subtitle">AA 退款记录</view>
+    <view wx:for="{{shareRefunds}}" wx:key="id" class="payment-row">
+      <text>用户 {{item.userId}}</text>
+      <view class="right">
+        <view>{{item.amountText}}</view>
+        <view>{{item.status}}</view>
+      </view>
+    </view>
+  </view>
+</view>

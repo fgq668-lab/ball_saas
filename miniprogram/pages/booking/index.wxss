@@ -1,0 +1,69 @@
+.booking-card {
+  background: #ffffff;
+  border: 1rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  padding: 28rpx;
+  margin-bottom: 24rpx;
+}
+
+.title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #111827;
+}
+
+.subtitle {
+  margin-top: 10rpx;
+  color: #6b7280;
+  font-size: 26rpx;
+}
+
+.field {
+  margin-top: 24rpx;
+  color: #374151;
+  font-size: 26rpx;
+}
+
+.picker-value {
+  margin-top: 10rpx;
+  padding: 18rpx;
+  border: 1rpx solid #d1d5db;
+  border-radius: 8rpx;
+  color: #111827;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+}
+
+.primary,
+.secondary {
+  margin-top: 24rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.primary {
+  background: #16a085;
+  color: #ffffff;
+}
+
+.secondary {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.message {
+  margin-top: 18rpx;
+  color: #16a085;
+  font-size: 26rpx;
+}
+
+.line {
+  margin-top: 12rpx;
+  color: #4b5563;
+  font-size: 26rpx;
+  word-break: break-all;
+}

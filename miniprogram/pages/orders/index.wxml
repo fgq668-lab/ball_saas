@@ -1,0 +1,10 @@
+<view class="section">
+  <view wx:if="{{error}}" class="card muted">{{error}}</view>
+  <view wx:for="{{orders}}" wx:key="id" class="order-card" bindtap="openDetail" data-id="{{item.id}}">
+    <view class="row strong"><text>{{item.orderNo}}</text><text>{{item.status}}</text></view>
+    <view class="meta">场馆 {{item.venueId}} · 场地 {{item.courtId}}</view>
+    <view class="meta">{{item.startAt}} - {{item.endAt}}</view>
+    <view class="amount">￥{{item.payableCent / 100}}</view>
+  </view>
+  <view wx:if="{{!error && orders.length === 0}}" class="card muted">暂无订单</view>
+</view>

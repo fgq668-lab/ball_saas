@@ -1,0 +1,11 @@
+<view class="section">
+  <view class="hero">
+    <view class="title">附近场馆</view>
+    <view class="subtitle">快速订场，轻松约战</view>
+  </view>
+  <view class="actions">
+    <navigator url="/pages/venues/index" class="action primary">订场</navigator>
+    <navigator url="/pages/matches/index" class="action">约战</navigator>
+  </view>
+</view>
+

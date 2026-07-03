@@ -1,0 +1,29 @@
+<view class="section">
+  <view class="card">
+    <view class="title">申请退款</view>
+    <view class="field">
+      <text>支付单 ID</text>
+      <input value="{{form.paymentOrderId}}" type="number" placeholder="请输入支付单ID" bindinput="updatePaymentOrderId" />
+    </view>
+    <view class="field">
+      <text>场馆 ID</text>
+      <input value="{{form.venueId}}" type="number" placeholder="请输入场馆ID" bindinput="updateVenueId" />
+    </view>
+    <view class="field">
+      <text>退款金额（分）</text>
+      <input value="{{form.amountCent}}" type="number" placeholder="例如 6000" bindinput="updateAmountCent" />
+    </view>
+    <view class="field">
+      <text>退款原因</text>
+      <textarea value="{{form.reason}}" bindinput="updateReason" />
+    </view>
+    <button class="primary" loading="{{submitting}}" bindtap="submitRefund">提交退款</button>
+  </view>
+
+  <view wx:if="{{refund}}" class="card result">
+    <view class="title">退款结果</view>
+    <view class="line">退款单：{{refund.refundNo}}</view>
+    <view class="line">金额：{{refund.amountText}}</view>
+    <view class="line">状态：{{refund.status}}</view>
+  </view>
+</view>

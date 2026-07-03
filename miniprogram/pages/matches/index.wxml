@@ -1,0 +1,29 @@
+<view class="section">
+  <view class="card create-card">
+    <view class="title">发起约战</view>
+    <view class="field">
+      <text>预约订单ID</text>
+      <input value="{{form.bookingOrderId}}" type="number" placeholder="已支付订单ID" bindinput="updateBookingId" />
+    </view>
+    <view class="field-row">
+      <view class="field half">
+        <text>最低人数</text>
+        <input value="{{form.minPlayers}}" type="number" bindinput="updateMinPlayers" />
+      </view>
+      <view class="field half">
+        <text>最多人数</text>
+        <input value="{{form.maxPlayers}}" type="number" bindinput="updateMaxPlayers" />
+      </view>
+    </view>
+    <button class="primary" loading="{{creating}}" bindtap="createMatch">创建约战</button>
+  </view>
+
+  <view wx:if="{{error}}" class="card muted">{{error}}</view>
+  <view wx:for="{{matches}}" wx:key="id" class="match-card" bindtap="openDetail" data-id="{{item.id}}">
+    <view class="row strong"><text>{{item.matchNo}}</text><text>{{item.status}}</text></view>
+    <view class="meta">场馆 {{item.venueId}} · 场地 {{item.courtId}}</view>
+    <view class="meta">人数 {{item.currentPlayers}}/{{item.maxPlayers}} · AA {{item.aaText}}</view>
+    <view class="meta">{{item.timeText}}</view>
+  </view>
+  <view wx:if="{{!error && matches.length === 0}}" class="card muted">暂无约战</view>
+</view>

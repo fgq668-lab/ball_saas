@@ -1,0 +1,56 @@
+services:
+  ball-saas-postgres:
+    image: postgres:16
+    container_name: ball-saas-postgres
+    environment:
+      POSTGRES_DB: ball_saas
+      POSTGRES_USER: ball_saas
+      POSTGRES_PASSWORD: ball_saas_dev
+    volumes:
+      - ball-saas-postgres-data:/var/lib/postgresql/data
+    networks:
+      - ball-saas-net
+
+  ball-saas-redis:
+    image: redis:7
+    container_name: ball-saas-redis
+    networks:
+      - ball-saas-net
+
+  ball-saas-api:
+    build:
+      context: ../backend
+    container_name: ball-saas-api
+    environment:
+      PORT: 18200
+      DB_URL: jdbc:postgresql://ball-saas-postgres:5432/ball_saas
+      DB_USERNAME: ball_saas
+      DB_PASSWORD: ball_saas_dev
+      REDIS_HOST: ball-saas-redis
+      REDIS_PORT: 6379
+    ports:
+      - "18200:18200"
+    depends_on:
+      - ball-saas-postgres
+      - ball-saas-redis
+    networks:
+      - ball-saas-net
+
+  ball-saas-admin:
+    build:
+      context: ../admin
+    container_name: ball-saas-admin
+    ports:
+      - "18201:80"
+    depends_on:
+      - ball-saas-api
+    networks:
+      - ball-saas-net
+
+volumes:
+  ball-saas-postgres-data:
+
+networks:
+  ball-saas-net:
+    name: ball-saas-net
+

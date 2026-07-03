@@ -1,0 +1,40 @@
+<view class="section">
+  <view class="booking-card">
+    <view class="title">预约场地</view>
+    <view class="subtitle">{{courtName || '场地'}} · 场馆 {{venueId}}</view>
+
+    <view class="field">
+      <text>日期</text>
+      <picker mode="date" value="{{date}}" bindchange="onDateChange">
+        <view class="picker-value">{{date}}</view>
+      </picker>
+    </view>
+
+    <view class="time-grid">
+      <view class="field">
+        <text>开始</text>
+        <picker mode="time" value="{{startTime}}" bindchange="onStartChange">
+          <view class="picker-value">{{startTime}}</view>
+        </picker>
+      </view>
+      <view class="field">
+        <text>结束</text>
+        <picker mode="time" value="{{endTime}}" bindchange="onEndChange">
+          <view class="picker-value">{{endTime}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <button class="primary" loading="{{submitting}}" bindtap="createBooking">创建预约</button>
+    <view wx:if="{{message}}" class="message">{{message}}</view>
+  </view>
+
+  <view wx:if="{{createdOrder}}" class="booking-card result-card">
+    <view class="title">{{createdOrder.orderNo}}</view>
+    <view class="line">状态：{{createdOrder.status}}</view>
+    <view class="line">金额：{{createdOrder.priceText}}</view>
+    <view class="line">时间：{{createdOrder.startAt}} - {{createdOrder.endAt}}</view>
+    <button class="primary" loading="{{submitting}}" bindtap="payCreatedOrder">模拟支付</button>
+    <button class="secondary" bindtap="openOrder">查看订单</button>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="section">
+  <view wx:if="{{error}}" class="card muted">{{error}}</view>
+  <view wx:for="{{venues}}" wx:key="id" class="venue-card">
+    <view class="venue-name">{{item.name}}</view>
+    <view class="venue-meta">{{item.address}}</view>
+    <navigator class="book-btn" url="/pages/venue-detail/index?id={{item.id}}">订场</navigator>
+  </view>
+  <view wx:if="{{!error && venues.length === 0}}" class="card muted">暂无场馆</view>
+</view>

@@ -1,0 +1,17 @@
+<view class="section">
+  <view wx:if="{{error}}" class="card muted">{{error}}</view>
+  <view wx:if="{{order}}" class="card detail">
+    <view class="title">{{order.orderNo}}</view>
+    <view class="line">订单ID：{{order.id}}</view>
+    <view class="line">状态：{{order.status}}</view>
+    <view class="line">场馆：{{order.venueId}}</view>
+    <view class="line">场地：{{order.courtId}}</view>
+    <view class="line">时间：{{order.startAt}} - {{order.endAt}}</view>
+    <view wx:if="{{order.paymentOrderId}}" class="line">支付单：{{order.paymentOrderId}} · {{order.paymentStatus}}</view>
+    <view class="price">￥{{order.payableCent / 100}}</view>
+    <button wx:if="{{order.status === 'PENDING_PAYMENT'}}" class="primary" loading="{{paying}}" bindtap="payOrder">模拟支付</button>
+    <button wx:if="{{order.status === 'PENDING_PAYMENT'}}" class="ghost" bindtap="cancelOrder">取消订单</button>
+    <navigator wx:if="{{order.status === 'RESERVED'}}" class="secondary" url="/pages/matches/index?bookingId={{order.id}}">发起约战</navigator>
+    <navigator wx:if="{{order.status === 'RESERVED' && order.paymentOrderId}}" class="secondary" url="/pages/refund/index?paymentOrderId={{order.paymentOrderId}}&venueId={{order.venueId}}&amountCent={{order.payableCent}}">申请退款</navigator>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+page {
+  background: #f6f8fa;
+  color: #111827;
+  font-size: 28rpx;
+}
+
+.section {
+  padding: 24rpx;
+}
+
+.card {
+  background: #ffffff;
+  border: 1rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  padding: 24rpx;
+}
+
+.primary {
+  background: #16a085;
+  color: #ffffff;
+}
+

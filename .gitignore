@@ -1,0 +1,36 @@
+# Java
+target/
+*.class
+.m2/
+.tools/
+
+# Node
+node_modules/
+dist/
+.vite/
+.npm-cache/
+admin/.npm-cache/
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.jks
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+# Codex workspace metadata
+.codex/
+.agents/
+

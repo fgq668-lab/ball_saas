@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/venues/index",
+    "pages/venue-detail/index",
+    "pages/booking/index",
+    "pages/orders/index",
+    "pages/order-detail/index",
+    "pages/refund/index",
+    "pages/matches/index",
+    "pages/match-detail/index",
+    "pages/profile/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "约球订场",
+    "navigationBarBackgroundColor": "#16A085",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F6F8FA"
+  }
+}
+
