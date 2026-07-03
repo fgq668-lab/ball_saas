@@ -8,15 +8,15 @@ Ball SaaS 是一个面向运动场馆的预约、订单、退款、球员约战�
 
 ### 管理后台 - 经营概览
 
-![管理后台经营概览](docs/assets/screenshots/admin-dashboard.png)
+![管理后台经营概览](docs/assets/screenshots/admin-dashboard.jpg)
 
 ### 管理后台 - 预约订单
 
-![管理后台预约订单](docs/assets/screenshots/admin-orders.png)
+![管理后台预约订单](docs/assets/screenshots/admin-orders.jpg)
 
 ### 管理后台 - 审计日志
 
-![管理后台审计日志](docs/assets/screenshots/admin-audit.png)
+![管理后台审计日志](docs/assets/screenshots/admin-audit.jpg)
 
 ## 核心功能
 
@@ -241,3 +241,4 @@ curl http://127.0.0.1:18201/
 ## License
 
 当前未指定开源许可证。发布到公开 GitHub 前请根据业务目标选择合适许可证，或保持私有仓库。
+
