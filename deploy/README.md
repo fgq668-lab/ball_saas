@@ -80,6 +80,23 @@ V3__audit_log.sql
 docker exec ball-saas-postgres psql -U ball_saas -d ball_saas -c "select version, description, success from flyway_schema_history order by installed_rank;"
 ```
 
+
+## 后台访问密码
+
+管理后台 Nginx 已启用 HTTP Basic Auth。部署前需要在服务器或本地创建 `admin/.htpasswd`，该文件不会提交到 Git 仓库。
+
+示例：
+
+```bash
+cd /path/to/ball-saas
+printf 'demo:{PLAIN}your-password\n' > admin/.htpasswd
+```
+
+说明：
+
+- `admin/.htpasswd` 会通过 Docker Compose 挂载到 `/etc/nginx/.htpasswd`。演示环境可使用 `{PLAIN}`，生产环境建议改用更强的访问控制或生成安全哈希。
+- 没有该文件时，`ball-saas-admin` 容器会无法正常提供后台页面。
+- `/` 页面访问需要 Basic Auth；`/api` 代理不启用 Basic Auth，避免与前端业务 Bearer token 冲突。
 ## 健康检查
 
 ```bash
@@ -122,3 +139,6 @@ https://api.example.com:443
 - 支付和退款公网 HTTPS 回调地址
 - 生产级后台账号、员工管理、菜单权限
 - 微信开发者工具预览、编译、真机测试
+
+
+

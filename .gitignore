@@ -34,3 +34,7 @@ Thumbs.db
 .codex/
 .agents/
 
+
+# Local demo auth file
+admin/.htpasswd
+
